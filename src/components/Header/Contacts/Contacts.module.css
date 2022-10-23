@@ -1,0 +1,32 @@
+.contactList{
+    display:flex;
+    justify-content:space-between;
+    margin:0;
+    padding:0;
+    list-style:none;
+    font-size:18px;
+    font-family:Bebas Neue,PT Sans,Arial,sans-serif;
+    line-height:18px
+}
+.contactItem{
+    display:flex;
+    align-items:flex-end
+}
+.contactItem p{
+    margin:0 0 0 5px
+}
+.contactItem a{
+    margin-left:5px;
+    color:#000
+}
+.contactItemPhone svg{
+    padding-bottom:3px
+}
+@media (max-width:768px){
+    .contactList{
+        justify-content:center
+    }
+    .contactItemAddress, .contactItemPhone{
+        display:none
+    }
+}

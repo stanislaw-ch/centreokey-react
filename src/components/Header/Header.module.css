@@ -1,0 +1,68 @@
+.pageHeaderContact{
+    margin-bottom:5px
+}
+.pageHeaderHeader{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background-color:#d8f9a9;
+    padding:15px 20px 10px
+}
+.pageHeaderTitle{
+    display:flex;
+    font-size:33px;
+    font-family:Karmina Bold,PT Sans,Arial,sans-serif;
+    color:#049536;
+    line-height:33px;
+    letter-spacing:.06em
+}
+.pageHeaderTitle p{
+    margin:0
+}
+.pageHeaderPicture img{
+    display:block
+}
+@media (max-width:960px){
+    .pageHeaderHeader{
+        flex-direction:column;
+        padding:20px 25px 15px
+    }
+    .pageHeaderTitle{
+        letter-spacing:.12em
+    }
+    .pageHeaderSearchForm{
+        align-self:start;
+        margin-top:10px
+    }
+    .pageHeaderSearchForm input{
+        width:525px
+    }
+    .pageHeaderPicture img{
+        display:none
+    }
+}
+@media (max-width:768px){
+    .pageHeaderHeader{
+        padding:20px 8px 15px
+    }
+    .pageHeaderTitle{
+        width:100%;
+        flex-direction:column;
+        font-size:33px;
+        line-height:33px;
+        letter-spacing:.05em
+    }
+    .pageHeaderTitle p{
+        padding-left:0;
+        text-align:center
+    }
+    .pageHeaderSearchForm{
+        width:100%;
+        margin-top:15px
+    }
+    .pageHeaderSearchForm button{
+        width:65px;
+        margin-left:1%;
+        margin-right:16%
+    }
+}

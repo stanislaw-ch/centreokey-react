@@ -1,0 +1,163 @@
+.mainNav{
+    position:relative;
+    z-index:2
+}
+.mainNavToggle{
+    display:none;
+    margin:0;
+    padding:0
+}
+.mainNavWrapper{
+    display:flex;
+    height:100%;
+    background-color:#d8f9a9;
+    box-shadow:0 5px 5px -4px rgba(0,0,0,.25)
+}
+.siteList{
+    display: flex;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.siteListItem{
+    display:flex;
+    font-size:26px;
+    font-family:Karmina Bold,PT Sans,Arial,sans-serif;
+    color:#049536;
+    line-height:26px;
+    letter-spacing:.08em
+}
+.siteListItem:hover{
+    background-color:#e4f4fe;
+    cursor:pointer
+}
+.siteListItem a{
+    display:flex;
+    align-items:center;
+    height:100%;
+    padding-top:3px;
+    padding-left:20px;
+    padding-right:20px
+}
+.siteListItemOption1 a{
+    color:#fc0101
+}
+.siteListItemOption2 a{
+    color:#58b15b
+}
+.siteListItemOption3 a{
+    color:#f51a85
+}
+.siteListItemOption4 a{
+    color:#ffb400
+}
+.siteListItemOption5 a{
+    color:#51b3ec
+}
+.siteListItemActive{
+    background-color:#e4f4fe;
+    pointer-events:none
+}
+@media (max-width:960px){
+    .mainNav{
+        display:flex;
+        justify-content:flex-end
+    }
+    .mainNavWrapper{
+        position:absolute
+    }
+    .mainNavClosed .siteList{
+        display:none
+    }
+    .mainNav--opened .siteList{
+        display:flex;
+        flex-direction:column;
+        width:250px;
+        height:auto;
+        background-color:#d8f9a9
+    }
+    .mainNavToggle{
+        position:absolute;
+        right:29px;
+        bottom:20px;
+        display:block;
+        width:33px;
+        height:25px;
+        border:none;
+        background-color:transparent;
+        cursor:pointer
+    }
+    .mainNav--opened .mainNavToggle:after,.mainNav--opened .mainNavToggle:before{
+        content:"";
+        position:absolute;
+        right:2px;
+        bottom:11px;
+        width:30px;
+        height:4px;
+        background-color:#666;
+        transition:.5s ease-out
+    }
+    .mainNav--opened .mainNavToggle:before{
+        transform:rotate(45deg);
+        box-shadow:none
+    }
+    .mainNav--opened .mainNavToggle:after{
+        transform:rotate(-45deg)
+    }
+    .mainNav--opened .mainNavToggle:active:after,.mainNav--opened .mainNavToggle:active:before{
+        background-color:hsla(0,0%,100%,.3)
+    }
+    .mainNavClosed .mainNavToggle:before{
+        content:"";
+        position:absolute;
+        right:0;
+        bottom:18px;
+        width:33px;
+        height:4px;
+        background-color:#666;
+        box-shadow:0 8px 0 0 #666,0 16px 0 0 #666;
+        transition:.5s ease-out
+    }
+    .siteListItem{
+        padding:5px 0;
+        background-color:#d8f9a9
+    }
+    .siteListItem:last-child{
+        padding-bottom:10px
+    }
+    .siteListItemActive{
+        background-color:#e4f4fe;
+        pointer-events:none
+    }
+    .siteListItem a{
+        width:100%
+    }
+}
+@media (max-width:768px){
+    .mainNavWrapper{
+        width:100%;
+        height:auto
+    }
+    .mainNav--opened .siteList{
+        width:100%
+    }
+    .mainNavToggle{
+        right:6%;
+        bottom:20px;
+        width:25px;
+        height:25px
+    }
+    .mainNav--opened .mainNavToggle:after,.mainNav--opened .mainNavToggle:before{
+        right:0;
+        bottom:11px;
+        width:25px;
+        height:3px
+    }
+    .mainNavClosed .mainNavToggle:before{
+        right:-2px;
+        bottom:19px;
+        width:25px;
+        height:3px
+    }
+}
