@@ -1,6 +1,6 @@
 import classes from './Footer.module.css'
-import classesRoot from '../../App.module.css'
 import Social from "./Social/Social";
+import SearchForm from "../Common/SearchForm/SearchForm";
 
 function Footer() {
     return (
@@ -12,14 +12,7 @@ function Footer() {
                         <p>Введите Ваш E-mail, чтобы подписаться на новостную рассылку сайта</p>
                     </div>
 
-                    {/*TODO: move to component Search*/}
-                    <form className={classesRoot.searchForm}
-                          action="src/components/Footer/Footer#"
-                          method="POST"
-                          name="subscribeform">
-                        <input type="text" name="email" placeholder="Введите свой E-mail" />
-                        <button type="submit" name="subscribe">о'кей</button>
-                    </form>
+                    <SearchForm />
 
                     <Social />
 
@@ -40,7 +33,7 @@ function Footer() {
                 </div>
             </div>
             <div className={classes.pageFooterCopyright}>
-                <p>© Психолого-развивающий центр "О'кей", 2015-2021</p>
+                <p>© Психолого-развивающий центр "О'кей", 2015-2023</p>
             </div>
         </footer>
     )

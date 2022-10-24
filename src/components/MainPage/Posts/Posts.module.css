@@ -1,7 +1,7 @@
 .post{
     flex-wrap:wrap;
     width:100%;
-    height:100%
+    /*height:100%*/
 }
 .post,.postWrapper{
     display:flex;
@@ -102,38 +102,6 @@
 }
 .postFooter a:hover{
     background-color:#fdb914
-}
-.postPagination{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    width:100%;
-    height:30px;
-    margin:0;
-    padding:0;
-    list-style:none;
-    background-color:#fff;
-    border-radius:15px;
-    border-bottom-left-radius:0;
-    border-bottom-right-radius:0
-}
-.postPagination a{
-    padding:0 2px;
-    color:#fdb914
-}
-.postPagination a:hover{
-    color:#fff;
-    background-color:#fdb914
-}
-.postPagination:empty{
-    display:none
-}
-.postPaginationItemActive{
-    background-color:#fdb914;
-    pointer-events:none
-}
-.postPaginationItemActive a{
-    color:#fff
 }
 @media (max-width:960px){
     .post{
