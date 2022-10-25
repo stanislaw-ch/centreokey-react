@@ -16,7 +16,7 @@ function Header({menuItems}) {
                     <p>Добро пожаловать на сайт развивающего центра "О'кей"</p>
                 </div>
 
-                <SearchForm typ={'Header'}/>
+                <SearchForm placeholder={'Поиск по сайту...'} btnTitle={'поиск'} typ={'Header'}/>
             </div>
 
             <div className={classes.pageHeaderPicture}>

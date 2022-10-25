@@ -12,7 +12,7 @@ function Footer() {
                         <p>Введите Ваш E-mail, чтобы подписаться на новостную рассылку сайта</p>
                     </div>
 
-                    <SearchForm />
+                    <SearchForm placeholder={'Введите свой E-mail'} btnTitle={'о\'кей'} />
 
                     <Social />
 
