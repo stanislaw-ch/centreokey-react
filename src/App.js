@@ -5,11 +5,12 @@ import Posts from "./components/MainPage/Posts/Posts";
 import News from "./components/MainPage/News/News";
 import {posts} from "./Moks/posts";
 import {news} from "./Moks/news";
+import {menuItems} from "./Moks/menu";
 
 function App() {
   return (
     <div className={classes.container}>
-        <Header />
+        <Header menuItems={menuItems} />
         <main>
           <h1 className={classes.visuallyHidden}>Центр 'Окей' - психолого - развивающий центр</h1>
           <div className={classes.pageMainWrapper}>

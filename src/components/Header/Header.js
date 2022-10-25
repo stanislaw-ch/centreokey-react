@@ -6,7 +6,7 @@ import Nav from "./Nav/Nav";
 import Contacts from "./Contacts/Contacts";
 import SearchForm from "../Common/SearchForm/SearchForm";
 
-function Header() {
+function Header({menuItems}) {
     return (
         <header>
             <Contacts />
@@ -27,7 +27,7 @@ function Header() {
                      alt="Заглавное изображение" />
             </div>
 
-            <Nav />
+            <Nav menuItems={menuItems} />
         </header>
     )
 }

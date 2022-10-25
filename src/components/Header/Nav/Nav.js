@@ -2,7 +2,7 @@ import {useState} from "react";
 import classesRoot from '../../../App.module.css'
 import classes from './Nav.module.css'
 
-function Nav() {
+function Nav({menuItems}) {
     const [isOpen, setIsOpen] = useState(false);
     const [activeIndex, setActiveIndex] = useState(1);
 
@@ -27,31 +27,20 @@ function Nav() {
             </button>
             <div className={classes.mainNavWrapper}>
                 <ul className={classes.siteList}>
-                    <li className={`${classes.siteListItem} ${classes.siteListItemOption1} ${activeIndex === 1? classes.siteListItemActive: null}`}
-                        onClick={handleMenuItemClick}
-                    >
-                        <a data-key={1}>Главная</a>
-                    </li>
-                    <li className={`${classes.siteListItem} ${classes.siteListItemOption2} ${activeIndex === 2? classes.siteListItemActive: null}`}
-                        onClick={handleMenuItemClick}
-                    >
-                        <a data-key={2}>Комплексное развитие</a>
-                    </li>
-                    <li className={`${classes.siteListItem} ${classes.siteListItemOption3} ${activeIndex === 3? classes.siteListItemActive: null}`}
-                        onClick={handleMenuItemClick}
-                    >
-                        <a data-key={3}>Английский для всех</a>
-                    </li>
-                    <li className={`${classes.siteListItem} ${classes.siteListItemOption4} ${activeIndex === 4? classes.siteListItemActive: null}`}
-                        onClick={handleMenuItemClick}
-                    >
-                        <a data-key={4}>Арт-студия</a>
-                    </li>
-                    <li className={`${classes.siteListItem} ${classes.siteListItemOption5} ${activeIndex === 5? classes.siteListItemActive: null}`}
-                        onClick={handleMenuItemClick}
-                    >
-                        <a data-key={5}>О нас</a>
-                    </li>
+                    {menuItems.map((item, key) => {
+                        return (
+                            <li className={
+                                `${classes.siteListItem} 
+                                 ${classes[`siteListItemOption${key}`]} 
+                                 ${activeIndex === key? classes.siteListItemActive: null}`
+                            }
+                                onClick={handleMenuItemClick}
+                                key={key}
+                            >
+                                <a data-key={key}>{item}</a>
+                            </li>
+                        )
+                    })}
                 </ul>
             </div>
         </nav>
