@@ -11,17 +11,23 @@ const PAGINATION = {
     SHIFT: 4,
 };
 
-function Posts({posts}) {
+function Posts({posts, pageId}) {
+    const filteredPosts = pageId === 0 || pageId === 4 ? posts : posts.filter((post) => post.section_id === pageId)
+
     const [articles, setArticles] = useState([]);
     const [endIndex, setEndIndex] = useState(PAGINATION.INITIAL_AMOUNT);
     const [startIndex, setStartIndex] = useState(0);
-    // const [totalCount, setTotalCount] = useState(0);
     const [pageNumber, setPageNumber] = useState(1);
 
     useEffect(() => {
-        setArticles(posts.slice(startIndex, endIndex));
-        // setTotalCount(articles.length);
-    }, [startIndex, endIndex]);
+        setArticles(filteredPosts.slice(startIndex, endIndex));
+    }, [pageId, startIndex, endIndex]);
+
+    useEffect(() => {
+        setPageNumber(1);
+        setStartIndex(0);
+        setEndIndex(PAGINATION.INITIAL_AMOUNT);
+    }, [pageId]);
 
     const handleClick = (e) => {
         const currentPage = Number(e.target.id)
@@ -54,8 +60,8 @@ function Posts({posts}) {
                 )
             }
 
-            {posts.length > 4
-                ? <Pagination postsLength={posts.length} handleClick={handleClick} pageNumber={pageNumber}/>
+            {filteredPosts.length > 4
+                ? <Pagination postsLength={filteredPosts.length} handleClick={handleClick} pageNumber={pageNumber}/>
                 : null}
         </section>
     )

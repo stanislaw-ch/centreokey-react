@@ -1,10 +1,11 @@
 import {useState} from "react";
+import {NavLink} from "react-router-dom";
 import classesRoot from '../../../App.module.css'
 import classes from './Nav.module.css'
 
 function Nav({menuItems}) {
     const [isOpen, setIsOpen] = useState(false);
-    const [activeIndex, setActiveIndex] = useState(1);
+    const [activeIndex, setActiveIndex] = useState(0);
 
     const navClasses = [
         classes.mainNav,
@@ -33,11 +34,11 @@ function Nav({menuItems}) {
                                 `${classes.siteListItem} 
                                  ${classes[`siteListItemOption${key}`]} 
                                  ${activeIndex === key? classes.siteListItemActive: null}`
-                            }
+                                }
                                 onClick={handleMenuItemClick}
                                 key={key}
                             >
-                                <a data-key={key}>{item}</a>
+                                <NavLink to={`/pageId_${key}`} data-key={key}>{item}</NavLink>
                             </li>
                         )
                     })}
