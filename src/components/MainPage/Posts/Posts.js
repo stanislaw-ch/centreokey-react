@@ -54,7 +54,7 @@ function Posts({posts, pageId}) {
                             </p>
                             <div className={`${classes.postFooter} ${classesRoot.contentFooter}`}>
                                 <span>{article.date}</span>
-                                <NavLink to={`article_${article.id}`}>Читать далее ⟩⟩</NavLink>
+                                <NavLink to={`${article.id}`}>Читать далее ⟩⟩</NavLink>
                             </div>
                         </div>
                     </div>)}

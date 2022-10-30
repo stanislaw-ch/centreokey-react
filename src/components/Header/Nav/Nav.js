@@ -27,7 +27,7 @@ function Nav({menuItems}) {
                             <li className={`${classes.siteListItem} ${classes[`siteListItemOption${key}`]}`}
                                 key={key}
                             >
-                                <NavLink to={`/page_id=${key}`}
+                                <NavLink to={`/page_${key}`}
                                          className={({isActive}) => (isActive ? classes.siteListItemActive : '')}
                                 >
                                     {item}

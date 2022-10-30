@@ -1,27 +1,31 @@
 import {Route, Routes, Navigate} from "react-router-dom";
 import Layout from "./components/Common/hocs/Layout/Layout";
 import Posts from "./components/MainPage/Posts/Posts";
-import News from "./components/MainPage/News/News";
+import Post from "./components/MainPage/Posts/Post/Post";
 import {posts} from "./Moks/posts";
-import {news} from "./Moks/news";
 import {menuItems} from "./Moks/menu";
-import MainPage from "./components/Common/hocs/MainPage/MainPage";
+import React from "react";
 
 function App() {
-  return (
+    return (
     <Layout>
         <Routes>
             {menuItems.map((menuItem, index) => {
                 return (
-                    <Route path={`/pageId_${index}`} element={
-                        <MainPage>
-                            <Posts posts={posts} pageId={index}/>
-                            <News news={news}/>
-                        </MainPage>
-                    } key={index}/>
+                    <React.Fragment key={index}>
+                        <Route
+                            path={`/page_${index}`}
+                            element={
+                                <Posts posts={posts} pageId={index}/>
+                            }
+                        />
+                        <Route path={`/page_${index}/:postId`} element={<Post posts={posts} />} />
+                    </React.Fragment>
                 )
             })}
-            <Route path="*" element={<Navigate to="/pageId_0" />} />
+
+            <Route path="/" element={<Navigate to="/page_0" />} />
+            <Route path="*" element={<Navigate to="/" />} />
         </Routes>
     </Layout>
   );
