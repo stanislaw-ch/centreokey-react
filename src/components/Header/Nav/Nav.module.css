@@ -34,11 +34,12 @@
 }
 .siteListItem a{
     display:flex;
+    box-sizing: border-box;
     align-items:center;
     height:100%;
     padding-top:3px;
     padding-left:20px;
-    padding-right:20px
+    padding-right:20px;
 }
 .siteListItemOption0 a{
     color:#fc0101
