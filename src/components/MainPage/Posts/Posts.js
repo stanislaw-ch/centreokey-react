@@ -5,6 +5,7 @@ import classes from './Posts.module.css'
 import classesRoot from '../../../App.module.css'
 import news1 from '../../../img/news_11@1x.png';
 import news2 from '../../../img/news_11@2x.png';
+import {NavLink} from "react-router-dom";
 
 const PAGINATION = {
     INITIAL_AMOUNT: 4,
@@ -53,7 +54,7 @@ function Posts({posts, pageId}) {
                             </p>
                             <div className={`${classes.postFooter} ${classesRoot.contentFooter}`}>
                                 <span>{article.date}</span>
-                                <a href="src/components/MainPage/Posts/Posts#">Читать далее ⟩⟩</a>
+                                <NavLink to={`article_${article.id}`}>Читать далее ⟩⟩</NavLink>
                             </div>
                         </div>
                     </div>)}
