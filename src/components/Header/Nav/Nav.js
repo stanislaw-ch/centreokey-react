@@ -5,7 +5,6 @@ import classes from './Nav.module.css'
 
 function Nav({menuItems}) {
     const [isOpen, setIsOpen] = useState(false);
-    const [activeIndex, setActiveIndex] = useState(0);
 
     const navClasses = [
         classes.mainNav,
@@ -14,11 +13,6 @@ function Nav({menuItems}) {
 
     const handleBurgerClick = () => {
         setIsOpen(!isOpen);
-    }
-
-    const handleMenuItemClick = (e) => {
-        const itemIndex = Number(e.target.getAttribute('data-key'))
-        setActiveIndex(itemIndex);
     }
 
     return (
@@ -30,15 +24,14 @@ function Nav({menuItems}) {
                 <ul className={classes.siteList}>
                     {menuItems.map((item, key) => {
                         return (
-                            <li className={
-                                `${classes.siteListItem} 
-                                 ${classes[`siteListItemOption${key}`]} 
-                                 ${activeIndex === key? classes.siteListItemActive: null}`
-                                }
-                                onClick={handleMenuItemClick}
+                            <li className={`${classes.siteListItem} ${classes[`siteListItemOption${key}`]}`}
                                 key={key}
                             >
-                                <NavLink to={`/pageId_${key}`} data-key={key}>{item}</NavLink>
+                                <NavLink to={`/page_id=${key}`}
+                                         className={({isActive}) => (isActive ? classes.siteListItemActive : '')}
+                                >
+                                    {item}
+                                </NavLink>
                             </li>
                         )
                     })}
