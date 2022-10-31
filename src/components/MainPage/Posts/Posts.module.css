@@ -16,6 +16,10 @@
     background-color:#fff;
     border-radius:15px
 }
+.postWrapperFull{
+    width: 100%;
+    background-color: #ffffff;
+}
 .postWrapper:nth-child(2n){
     margin-right:0
 }

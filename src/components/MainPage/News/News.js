@@ -1,9 +1,12 @@
+import {NavLink} from "react-router-dom";
 import classes from '../../../App.module.css'
 
 function News({news}) {
     return (
         <section className={classes.news}>
-            <div className={`${classes.newsHeader} ${classes.header}`}><h2>Новости</h2></div>
+            <div className={`${classes.newsHeader} ${classes.header}`}>
+                <h2>Новости</h2>
+            </div>
             <button className={`${classes.newsSlideButton} ${classes.newsSlideButtonRight}`} type="button"></button>
             <button className={`${classes.newsSlideButton} ${classes.newsSlideButtonLeft}`} type="button"></button>
             <div className={classes.newsSliderContainer}>
@@ -15,7 +18,7 @@ function News({news}) {
                                 <p>{newsItem.text}</p>
                                 <div className={classes.contentFooter}>
                                     <span>{newsItem.date}</span>
-                                    <a href="src/components/MainPage/News/News#">Читать далее ⟩⟩</a>
+                                    <NavLink to={`news/${newsItem.id}`}>Читать далее ⟩⟩</NavLink>
                                 </div>
                             </li>
                             )
