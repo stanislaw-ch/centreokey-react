@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {NavLink} from "react-router-dom";
-import classesRoot from '../../../App.module.css'
+import classesRoot from '../../../../App.module.css'
 import classes from './Nav.module.css'
 
 function Nav({menuItems}) {

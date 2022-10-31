@@ -2,7 +2,7 @@ import classes from './Header.module.css'
 
 import header1x from '../../img/header@1x.png';
 import header2x from '../../img/header@2x.png';
-import Nav from "./Nav/Nav";
+import Nav from "../MainPage/Pagination/Nav/Nav";
 import Contacts from "./Contacts/Contacts";
 import SearchForm from "../Common/SearchForm/SearchForm";
 
