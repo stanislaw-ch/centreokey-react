@@ -3,9 +3,7 @@ import Header from "../../../Header/Header";
 import Footer from "../../../Footer/Footer";
 import MainPage from "../MainPage/MainPage";
 import News from "../../../MainPage/News/News";
-
-import {menuItems} from "../../../../Moks/menu";
-import {news} from "../../../../Moks/news";
+import {menuItems, news} from "../../../../Moks";
 
 function Layout({children}) {
     return (

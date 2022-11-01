@@ -13,7 +13,8 @@ const PAGINATION = {
 };
 
 function Posts({posts, pageId}) {
-    const filteredPosts = pageId === 0 || pageId === 4 ? posts : posts.filter((post) => post.section_id === pageId)
+    let filteredPosts = posts.filter((post) => post.section_id === pageId)
+    filteredPosts = filteredPosts.length === 0 ? posts : filteredPosts
 
     const [articles, setArticles] = useState([]);
     const [endIndex, setEndIndex] = useState(PAGINATION.INITIAL_AMOUNT);
@@ -37,7 +38,6 @@ function Posts({posts, pageId}) {
         setEndIndex(currentPage * PAGINATION.INITIAL_AMOUNT);
         setPageNumber(currentPage);
     }
-
     return (
         <section className={classes.post}>
             {articles.map((article) => {
@@ -54,7 +54,7 @@ function Posts({posts, pageId}) {
                             </p>
                             <div className={`${classes.postFooter} ${classesRoot.contentFooter}`}>
                                 <span>{article.date}</span>
-                                <NavLink to={`article/${article.id}`}>Читать далее ⟩⟩</NavLink>
+                                <NavLink to={`${article.id}`}>Читать далее ⟩⟩</NavLink>
                             </div>
                         </div>
                     </div>)}
